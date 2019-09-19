@@ -1,32 +1,32 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-<span data-ttu-id="ba053-101">В этом упражнении вы будете использовать [Джанго](https://www.djangoproject.com/) для создания веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="ba053-101">In this exercise you will use [Django](https://www.djangoproject.com/) to build a web app.</span></span> <span data-ttu-id="ba053-102">Если вы еще не установили Джанго, вы можете установить его из интерфейса командной строки (CLI) с помощью следующей команды.</span><span class="sxs-lookup"><span data-stu-id="ba053-102">If you don't already have Django installed, you can install it from your command-line interface (CLI) with the following command.</span></span>
+<span data-ttu-id="e36c3-101">В этом упражнении вы будете использовать [Джанго](https://www.djangoproject.com/) для создания веб-приложения.</span><span class="sxs-lookup"><span data-stu-id="e36c3-101">In this exercise you will use [Django](https://www.djangoproject.com/) to build a web app.</span></span> <span data-ttu-id="e36c3-102">Если вы еще не установили Джанго, вы можете установить его из интерфейса командной строки (CLI) с помощью следующей команды.</span><span class="sxs-lookup"><span data-stu-id="e36c3-102">If you don't already have Django installed, you can install it from your command-line interface (CLI) with the following command.</span></span>
 
 ```Shell
-pip install Django=2.2.2
+pip install Django=2.2.5
 ```
 
-<span data-ttu-id="ba053-103">Откройте подсистему CLI, перейдите к каталогу, в котором у вас есть права на создание файлов, и выполните следующую команду, чтобы создать новое приложение Джанго.</span><span class="sxs-lookup"><span data-stu-id="ba053-103">Open your CLI, navigate to a directory where you have rights to create files, and run the following command to create a new Django app.</span></span>
+<span data-ttu-id="e36c3-103">Откройте подсистему CLI, перейдите к каталогу, в котором у вас есть права на создание файлов, и выполните следующую команду, чтобы создать новое приложение Джанго.</span><span class="sxs-lookup"><span data-stu-id="e36c3-103">Open your CLI, navigate to a directory where you have rights to create files, and run the following command to create a new Django app.</span></span>
 
 ```Shell
 django-admin startproject graph_tutorial
 ```
 
-<span data-ttu-id="ba053-104">Джанго создает новый каталог с именем `graph_tutorial` и формирование шаблонов для веб-приложения Джанго.</span><span class="sxs-lookup"><span data-stu-id="ba053-104">Django creates a new directory called `graph_tutorial` and scaffolds a Django web app.</span></span> <span data-ttu-id="ba053-105">Перейдите к новому каталогу и введите следующую команду для запуска локального веб-сервера.</span><span class="sxs-lookup"><span data-stu-id="ba053-105">Navigate to this new directory and enter the following command to start a local web server.</span></span>
+<span data-ttu-id="e36c3-104">Джанго создает новый каталог с именем `graph_tutorial` и формирование шаблонов для веб-приложения Джанго.</span><span class="sxs-lookup"><span data-stu-id="e36c3-104">Django creates a new directory called `graph_tutorial` and scaffolds a Django web app.</span></span> <span data-ttu-id="e36c3-105">Перейдите к новому каталогу и введите следующую команду для запуска локального веб-сервера.</span><span class="sxs-lookup"><span data-stu-id="e36c3-105">Navigate to this new directory and enter the following command to start a local web server.</span></span>
 
 ```Shell
 python manage.py runserver
 ```
 
-<span data-ttu-id="ba053-106">Откройте браузер и перейдите по адресу `http://localhost:8000`.</span><span class="sxs-lookup"><span data-stu-id="ba053-106">Open your browser and navigate to `http://localhost:8000`.</span></span> <span data-ttu-id="ba053-107">Если все работает, вы увидите страницу приветствия Джанго.</span><span class="sxs-lookup"><span data-stu-id="ba053-107">If everything is working, you will see a Django welcome page.</span></span> <span data-ttu-id="ba053-108">Если вы не видите это, ознакомьтесь с [руководством по началу работы с Джанго](https://www.djangoproject.com/start/).</span><span class="sxs-lookup"><span data-stu-id="ba053-108">If you don't see that, check the [Django getting started guide](https://www.djangoproject.com/start/).</span></span>
+<span data-ttu-id="e36c3-106">Откройте браузер и перейдите по адресу `http://localhost:8000`.</span><span class="sxs-lookup"><span data-stu-id="e36c3-106">Open your browser and navigate to `http://localhost:8000`.</span></span> <span data-ttu-id="e36c3-107">Если все работает, вы увидите страницу приветствия Джанго.</span><span class="sxs-lookup"><span data-stu-id="e36c3-107">If everything is working, you will see a Django welcome page.</span></span> <span data-ttu-id="e36c3-108">Если вы не видите это, ознакомьтесь с [руководством по началу работы с Джанго](https://www.djangoproject.com/start/).</span><span class="sxs-lookup"><span data-stu-id="e36c3-108">If you don't see that, check the [Django getting started guide](https://www.djangoproject.com/start/).</span></span>
 
-<span data-ttu-id="ba053-109">Теперь, когда вы проверили проект, добавьте приложение в проект.</span><span class="sxs-lookup"><span data-stu-id="ba053-109">Now that you've verified the project, add an app to the project.</span></span> <span data-ttu-id="ba053-110">Выполните следующую команду в командной панели CLI.</span><span class="sxs-lookup"><span data-stu-id="ba053-110">Run the following command in your CLI.</span></span>
+<span data-ttu-id="e36c3-109">Теперь, когда вы проверили проект, добавьте приложение в проект.</span><span class="sxs-lookup"><span data-stu-id="e36c3-109">Now that you've verified the project, add an app to the project.</span></span> <span data-ttu-id="e36c3-110">Выполните следующую команду в командной панели CLI.</span><span class="sxs-lookup"><span data-stu-id="e36c3-110">Run the following command in your CLI.</span></span>
 
 ```Shell
 python manage.py startapp tutorial
 ```
 
-<span data-ttu-id="ba053-111">В результате будет создано новое приложение в `./tutorial` каталоге.</span><span class="sxs-lookup"><span data-stu-id="ba053-111">This creates a new app in the `./tutorial` directory.</span></span> <span data-ttu-id="ba053-112">Откройте `./graph_tutorial/settings.py` и добавьте новое `tutorial` приложение в `INSTALLED_APPS` параметр.</span><span class="sxs-lookup"><span data-stu-id="ba053-112">Open the `./graph_tutorial/settings.py` and add the new `tutorial` app to the `INSTALLED_APPS` setting.</span></span>
+<span data-ttu-id="e36c3-111">В результате будет создано новое приложение в `./tutorial` каталоге.</span><span class="sxs-lookup"><span data-stu-id="e36c3-111">This creates a new app in the `./tutorial` directory.</span></span> <span data-ttu-id="e36c3-112">Откройте `./graph_tutorial/settings.py` и добавьте новое `tutorial` приложение в `INSTALLED_APPS` параметр.</span><span class="sxs-lookup"><span data-stu-id="e36c3-112">Open the `./graph_tutorial/settings.py` and add the new `tutorial` app to the `INSTALLED_APPS` setting.</span></span>
 
 ```python
 INSTALLED_APPS = [
@@ -40,13 +40,13 @@ INSTALLED_APPS = [
 ]
 ```
 
-<span data-ttu-id="ba053-113">В интерфейсе командной строки выполните следующую команду, чтобы инициализировать базу данных для проекта.</span><span class="sxs-lookup"><span data-stu-id="ba053-113">In your CLI, run the following command to initialize the database for the project.</span></span>
+<span data-ttu-id="e36c3-113">В интерфейсе командной строки выполните следующую команду, чтобы инициализировать базу данных для проекта.</span><span class="sxs-lookup"><span data-stu-id="e36c3-113">In your CLI, run the following command to initialize the database for the project.</span></span>
 
 ```Shell
 python manage.py migrate
 ```
 
-<span data-ttu-id="ba053-114">Добавьте [урлконф](https://docs.djangoproject.com/en/2.1/topics/http/urls/) для `tutorial` приложения.</span><span class="sxs-lookup"><span data-stu-id="ba053-114">Add a [URLconf](https://docs.djangoproject.com/en/2.1/topics/http/urls/) for the `tutorial` app.</span></span> <span data-ttu-id="ba053-115">Создайте новый файл в `./tutorial` каталоге `urls.py` и добавьте указанный ниже код.</span><span class="sxs-lookup"><span data-stu-id="ba053-115">Create a new file in the `./tutorial` directory named `urls.py` and add the following code.</span></span>
+<span data-ttu-id="e36c3-114">Добавьте [урлконф](https://docs.djangoproject.com/en/2.1/topics/http/urls/) для `tutorial` приложения.</span><span class="sxs-lookup"><span data-stu-id="e36c3-114">Add a [URLconf](https://docs.djangoproject.com/en/2.1/topics/http/urls/) for the `tutorial` app.</span></span> <span data-ttu-id="e36c3-115">Создайте новый файл в `./tutorial` каталоге `urls.py` и добавьте указанный ниже код.</span><span class="sxs-lookup"><span data-stu-id="e36c3-115">Create a new file in the `./tutorial` directory named `urls.py` and add the following code.</span></span>
 
 ```python
 from django.urls import path
@@ -59,7 +59,7 @@ urlpatterns = [
 ]
 ```
 
-<span data-ttu-id="ba053-116">Теперь обновите проект Урлконф, чтобы импортировать его.</span><span class="sxs-lookup"><span data-stu-id="ba053-116">Now update the project URLconf to import this one.</span></span> <span data-ttu-id="ba053-117">Откройте `./graph_tutorial/urls.py` файл и замените его содержимое приведенным ниже содержимым.</span><span class="sxs-lookup"><span data-stu-id="ba053-117">Open the `./graph_tutorial/urls.py` file and replace the contents with the following.</span></span>
+<span data-ttu-id="e36c3-116">Теперь обновите проект Урлконф, чтобы импортировать его.</span><span class="sxs-lookup"><span data-stu-id="e36c3-116">Now update the project URLconf to import this one.</span></span> <span data-ttu-id="e36c3-117">Откройте `./graph_tutorial/urls.py` файл и замените его содержимое приведенным ниже содержимым.</span><span class="sxs-lookup"><span data-stu-id="e36c3-117">Open the `./graph_tutorial/urls.py` file and replace the contents with the following.</span></span>
 
 ```python
 from django.contrib import admin
@@ -72,7 +72,7 @@ urlpatterns = [
 ]
 ```
 
-<span data-ttu-id="ba053-118">Наконец, добавьте временное представление в `tutorials` приложение, чтобы убедиться в работоспособности маршрутизации URL-адресов.</span><span class="sxs-lookup"><span data-stu-id="ba053-118">Finally add a temporary view to the `tutorials` app to verify that URL routing is working.</span></span> <span data-ttu-id="ba053-119">Откройте файл `./tutorial/views.py` и добавьте в него указанный ниже код.</span><span class="sxs-lookup"><span data-stu-id="ba053-119">Open the `./tutorial/views.py` file and add the following code.</span></span>
+<span data-ttu-id="e36c3-118">Наконец, добавьте временное представление в `tutorials` приложение, чтобы убедиться в работоспособности маршрутизации URL-адресов.</span><span class="sxs-lookup"><span data-stu-id="e36c3-118">Finally add a temporary view to the `tutorials` app to verify that URL routing is working.</span></span> <span data-ttu-id="e36c3-119">Откройте файл `./tutorial/views.py` и добавьте в него указанный ниже код.</span><span class="sxs-lookup"><span data-stu-id="e36c3-119">Open the `./tutorial/views.py` file and add the following code.</span></span>
 
 ```python
 from django.http import HttpResponse, HttpResponseRedirect
@@ -82,15 +82,15 @@ def home(request):
   return HttpResponse("Welcome to the tutorial.")
 ```
 
-<span data-ttu-id="ba053-120">Сохраните все изменения и перезапустите сервер.</span><span class="sxs-lookup"><span data-stu-id="ba053-120">Save all of your changes and restart the server.</span></span> <span data-ttu-id="ba053-121">Перейдите к `http://localhost:8000/tutorial`.</span><span class="sxs-lookup"><span data-stu-id="ba053-121">Browse to `http://localhost:8000/tutorial`.</span></span> <span data-ttu-id="ba053-122">Вы должны увидеть`Welcome to the tutorial.`</span><span class="sxs-lookup"><span data-stu-id="ba053-122">You should see `Welcome to the tutorial.`</span></span>
+<span data-ttu-id="e36c3-120">Сохраните все изменения и перезапустите сервер.</span><span class="sxs-lookup"><span data-stu-id="e36c3-120">Save all of your changes and restart the server.</span></span> <span data-ttu-id="e36c3-121">Перейдите к `http://localhost:8000/tutorial`.</span><span class="sxs-lookup"><span data-stu-id="e36c3-121">Browse to `http://localhost:8000/tutorial`.</span></span> <span data-ttu-id="e36c3-122">Вы должны увидеть`Welcome to the tutorial.`</span><span class="sxs-lookup"><span data-stu-id="e36c3-122">You should see `Welcome to the tutorial.`</span></span>
 
-<span data-ttu-id="ba053-123">Прежде чем переходить, установите несколько дополнительных библиотек, которые будут использоваться позже:</span><span class="sxs-lookup"><span data-stu-id="ba053-123">Before moving on, install some additional libraries that you will use later:</span></span>
+<span data-ttu-id="e36c3-123">Прежде чем переходить, установите несколько дополнительных библиотек, которые будут использоваться позже:</span><span class="sxs-lookup"><span data-stu-id="e36c3-123">Before moving on, install some additional libraries that you will use later:</span></span>
 
-- <span data-ttu-id="ba053-124">[Запросы OAuthlib: OAuth для людей](https://requests-oauthlib.readthedocs.io/en/latest/) для обработки входа и потоков маркеров OAuth, а для совершения звонков в Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="ba053-124">[Requests-OAuthlib: OAuth for Humans](https://requests-oauthlib.readthedocs.io/en/latest/) for handling sign-in and OAuth token flows, and for making calls to Microsoft Graph.</span></span>
-- <span data-ttu-id="ba053-125">[Пиямл](https://pyyaml.org/wiki/PyYAMLDocumentation) для загрузки конфигурации из файла ямл.</span><span class="sxs-lookup"><span data-stu-id="ba053-125">[PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) for loading configuration from a YAML file.</span></span>
-- <span data-ttu-id="ba053-126">[Python-датеутил](https://pypi.org/project/python-dateutil/) для синтаксического анализа строк даты ISO 8601, возвращенных из Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="ba053-126">[python-dateutil](https://pypi.org/project/python-dateutil/) for parsing ISO 8601 date strings returned from Microsoft Graph.</span></span>
+- <span data-ttu-id="e36c3-124">[Запросы OAuthlib: OAuth для людей](https://requests-oauthlib.readthedocs.io/en/latest/) для обработки входа и потоков маркеров OAuth, а для совершения звонков в Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="e36c3-124">[Requests-OAuthlib: OAuth for Humans](https://requests-oauthlib.readthedocs.io/en/latest/) for handling sign-in and OAuth token flows, and for making calls to Microsoft Graph.</span></span>
+- <span data-ttu-id="e36c3-125">[Пиямл](https://pyyaml.org/wiki/PyYAMLDocumentation) для загрузки конфигурации из файла ямл.</span><span class="sxs-lookup"><span data-stu-id="e36c3-125">[PyYAML](https://pyyaml.org/wiki/PyYAMLDocumentation) for loading configuration from a YAML file.</span></span>
+- <span data-ttu-id="e36c3-126">[Python-датеутил](https://pypi.org/project/python-dateutil/) для синтаксического анализа строк даты ISO 8601, возвращенных из Microsoft Graph.</span><span class="sxs-lookup"><span data-stu-id="e36c3-126">[python-dateutil](https://pypi.org/project/python-dateutil/) for parsing ISO 8601 date strings returned from Microsoft Graph.</span></span>
 
-<span data-ttu-id="ba053-127">Выполните следующую команду в командной панели CLI.</span><span class="sxs-lookup"><span data-stu-id="ba053-127">Run the following command in your CLI.</span></span>
+<span data-ttu-id="e36c3-127">Выполните следующую команду в командной панели CLI.</span><span class="sxs-lookup"><span data-stu-id="e36c3-127">Run the following command in your CLI.</span></span>
 
 ```Shell
 pip install requests_oauthlib==1.2.0
@@ -98,9 +98,9 @@ pip install pyyaml==5.1
 pip install python-dateutil==2.8.0
 ```
 
-## <a name="design-the-app"></a><span data-ttu-id="ba053-128">Проектирование приложения</span><span class="sxs-lookup"><span data-stu-id="ba053-128">Design the app</span></span>
+## <a name="design-the-app"></a><span data-ttu-id="e36c3-128">Проектирование приложения</span><span class="sxs-lookup"><span data-stu-id="e36c3-128">Design the app</span></span>
 
-<span data-ttu-id="ba053-129">Начните с создания каталога Templates и определения глобального макета для приложения.</span><span class="sxs-lookup"><span data-stu-id="ba053-129">Start by creating a templates directory and defining a global layout for the app.</span></span> <span data-ttu-id="ba053-130">Создайте новый каталог в `./tutorial` каталоге с именем. `templates`</span><span class="sxs-lookup"><span data-stu-id="ba053-130">Create a new directory in the `./tutorial` directory named `templates`.</span></span> <span data-ttu-id="ba053-131">В `templates` каталоге создайте новый каталог с именем `tutorial`.</span><span class="sxs-lookup"><span data-stu-id="ba053-131">In the `templates` directory, create a new directory named `tutorial`.</span></span> <span data-ttu-id="ba053-132">Наконец, создайте в этом каталоге новый файл с именем `layout.html`.</span><span class="sxs-lookup"><span data-stu-id="ba053-132">Finally, create a new file in this directory named `layout.html`.</span></span> <span data-ttu-id="ba053-133">Должен быть `./tutorial/templates/tutorial/layout.html`относительный путь из корневого каталога проекта.</span><span class="sxs-lookup"><span data-stu-id="ba053-133">The relative path from the root of your project should be `./tutorial/templates/tutorial/layout.html`.</span></span> <span data-ttu-id="ba053-134">Добавьте в этот файл приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="ba053-134">Add the following code in that file.</span></span>
+<span data-ttu-id="e36c3-129">Начните с создания каталога Templates и определения глобального макета для приложения.</span><span class="sxs-lookup"><span data-stu-id="e36c3-129">Start by creating a templates directory and defining a global layout for the app.</span></span> <span data-ttu-id="e36c3-130">Создайте новый каталог в `./tutorial` каталоге с именем. `templates`</span><span class="sxs-lookup"><span data-stu-id="e36c3-130">Create a new directory in the `./tutorial` directory named `templates`.</span></span> <span data-ttu-id="e36c3-131">В `templates` каталоге создайте новый каталог с именем `tutorial`.</span><span class="sxs-lookup"><span data-stu-id="e36c3-131">In the `templates` directory, create a new directory named `tutorial`.</span></span> <span data-ttu-id="e36c3-132">Наконец, создайте в этом каталоге новый файл с именем `layout.html`.</span><span class="sxs-lookup"><span data-stu-id="e36c3-132">Finally, create a new file in this directory named `layout.html`.</span></span> <span data-ttu-id="e36c3-133">Должен быть `./tutorial/templates/tutorial/layout.html`относительный путь из корневого каталога проекта.</span><span class="sxs-lookup"><span data-stu-id="e36c3-133">The relative path from the root of your project should be `./tutorial/templates/tutorial/layout.html`.</span></span> <span data-ttu-id="e36c3-134">Добавьте в этот файл приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="e36c3-134">Add the following code in that file.</span></span>
 
 ```html
 <!DOCTYPE html>
@@ -188,9 +188,9 @@ pip install python-dateutil==2.8.0
 </html>
 ```
 
-<span data-ttu-id="ba053-135">В этом коде [](http://getbootstrap.com/) добавляется начальная загрузка для простых стилей и [Шрифт Awesome](https://fontawesome.com/) для некоторых простых значков.</span><span class="sxs-lookup"><span data-stu-id="ba053-135">This code adds [Bootstrap](http://getbootstrap.com/) for simple styling, and [Font Awesome](https://fontawesome.com/) for some simple icons.</span></span> <span data-ttu-id="ba053-136">Он также определяет глобальную структуру с помощью панели навигации.</span><span class="sxs-lookup"><span data-stu-id="ba053-136">It also defines a global layout with a nav bar.</span></span>
+<span data-ttu-id="e36c3-135">В этом коде добавляется [Начальная](http://getbootstrap.com/) загрузка для простых стилей и [Шрифт Awesome](https://fontawesome.com/) для некоторых простых значков.</span><span class="sxs-lookup"><span data-stu-id="e36c3-135">This code adds [Bootstrap](http://getbootstrap.com/) for simple styling, and [Font Awesome](https://fontawesome.com/) for some simple icons.</span></span> <span data-ttu-id="e36c3-136">Он также определяет глобальную структуру с помощью панели навигации.</span><span class="sxs-lookup"><span data-stu-id="e36c3-136">It also defines a global layout with a nav bar.</span></span>
 
-<span data-ttu-id="ba053-137">Теперь создайте новый каталог в `./tutorial` каталоге с именем. `static`</span><span class="sxs-lookup"><span data-stu-id="ba053-137">Now create a new directory in the `./tutorial` directory named `static`.</span></span> <span data-ttu-id="ba053-138">В `static` каталоге создайте новый каталог с именем `tutorial`.</span><span class="sxs-lookup"><span data-stu-id="ba053-138">In the `static` directory, create a new directory named `tutorial`.</span></span> <span data-ttu-id="ba053-139">Наконец, создайте в этом каталоге новый файл с именем `app.css`.</span><span class="sxs-lookup"><span data-stu-id="ba053-139">Finally, create a new file in this directory named `app.css`.</span></span> <span data-ttu-id="ba053-140">Должен быть `./tutorial/static/tutorial/app.css`относительный путь из корневого каталога проекта.</span><span class="sxs-lookup"><span data-stu-id="ba053-140">The relative path from the root of your project should be `./tutorial/static/tutorial/app.css`.</span></span> <span data-ttu-id="ba053-141">Добавьте в этот файл приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="ba053-141">Add the following code in that file.</span></span>
+<span data-ttu-id="e36c3-137">Теперь создайте новый каталог в `./tutorial` каталоге с именем. `static`</span><span class="sxs-lookup"><span data-stu-id="e36c3-137">Now create a new directory in the `./tutorial` directory named `static`.</span></span> <span data-ttu-id="e36c3-138">В `static` каталоге создайте новый каталог с именем `tutorial`.</span><span class="sxs-lookup"><span data-stu-id="e36c3-138">In the `static` directory, create a new directory named `tutorial`.</span></span> <span data-ttu-id="e36c3-139">Наконец, создайте в этом каталоге новый файл с именем `app.css`.</span><span class="sxs-lookup"><span data-stu-id="e36c3-139">Finally, create a new file in this directory named `app.css`.</span></span> <span data-ttu-id="e36c3-140">Должен быть `./tutorial/static/tutorial/app.css`относительный путь из корневого каталога проекта.</span><span class="sxs-lookup"><span data-stu-id="e36c3-140">The relative path from the root of your project should be `./tutorial/static/tutorial/app.css`.</span></span> <span data-ttu-id="e36c3-141">Добавьте в этот файл приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="e36c3-141">Add the following code in that file.</span></span>
 
 ```css
 body {
@@ -204,7 +204,7 @@ body {
 }
 ```
 
-<span data-ttu-id="ba053-142">Затем создайте шаблон для домашней страницы, использующей макет.</span><span class="sxs-lookup"><span data-stu-id="ba053-142">Next, create a template for the home page that uses the layout.</span></span> <span data-ttu-id="ba053-143">Создайте новый файл в `./tutorial/templates/tutorial` каталоге `home.html` и добавьте указанный ниже код.</span><span class="sxs-lookup"><span data-stu-id="ba053-143">Create a new file in the `./tutorial/templates/tutorial` directory named `home.html` and add the following code.</span></span>
+<span data-ttu-id="e36c3-142">Затем создайте шаблон для домашней страницы, использующей макет.</span><span class="sxs-lookup"><span data-stu-id="e36c3-142">Next, create a template for the home page that uses the layout.</span></span> <span data-ttu-id="e36c3-143">Создайте новый файл в `./tutorial/templates/tutorial` каталоге `home.html` и добавьте указанный ниже код.</span><span class="sxs-lookup"><span data-stu-id="e36c3-143">Create a new file in the `./tutorial/templates/tutorial` directory named `home.html` and add the following code.</span></span>
 
 ```html
 {% extends "tutorial/layout.html" %}
@@ -222,7 +222,7 @@ body {
 {% endblock %}
 ```
 
-<span data-ttu-id="ba053-144">Обновите `home` представление, чтобы использовать этот шаблон.</span><span class="sxs-lookup"><span data-stu-id="ba053-144">Update the `home` view to use this template.</span></span> <span data-ttu-id="ba053-145">Откройте `./tutorial/views.py` файл и добавьте следующую новую функцию.</span><span class="sxs-lookup"><span data-stu-id="ba053-145">Open the `./tutorial/views.py` file and add the following new function.</span></span>
+<span data-ttu-id="e36c3-144">Обновите `home` представление, чтобы использовать этот шаблон.</span><span class="sxs-lookup"><span data-stu-id="e36c3-144">Update the `home` view to use this template.</span></span> <span data-ttu-id="e36c3-145">Откройте `./tutorial/views.py` файл и добавьте следующую новую функцию.</span><span class="sxs-lookup"><span data-stu-id="e36c3-145">Open the `./tutorial/views.py` file and add the following new function.</span></span>
 
 ```python
 def initialize_context(request):
@@ -240,7 +240,7 @@ def initialize_context(request):
   return context
 ```
 
-<span data-ttu-id="ba053-146">Затем замените имеющееся `home` представление следующим.</span><span class="sxs-lookup"><span data-stu-id="ba053-146">Then replace the existing `home` view with the following.</span></span>
+<span data-ttu-id="e36c3-146">Затем замените имеющееся `home` представление следующим.</span><span class="sxs-lookup"><span data-stu-id="e36c3-146">Then replace the existing `home` view with the following.</span></span>
 
 ```python
 def home(request):
@@ -249,6 +249,6 @@ def home(request):
   return render(request, 'tutorial/home.html', context)
 ```
 
-<span data-ttu-id="ba053-147">Сохраните все изменения и перезапустите сервер.</span><span class="sxs-lookup"><span data-stu-id="ba053-147">Save all of your changes and restart the server.</span></span> <span data-ttu-id="ba053-148">Теперь приложение должно выглядеть по-другому.</span><span class="sxs-lookup"><span data-stu-id="ba053-148">Now, the app should look very different.</span></span>
+<span data-ttu-id="e36c3-147">Сохраните все изменения и перезапустите сервер.</span><span class="sxs-lookup"><span data-stu-id="e36c3-147">Save all of your changes and restart the server.</span></span> <span data-ttu-id="e36c3-148">Теперь приложение должно выглядеть по-другому.</span><span class="sxs-lookup"><span data-stu-id="e36c3-148">Now, the app should look very different.</span></span>
 
 ![Снимок экрана с переработанной домашней страницей](./images/create-app-01.png)
