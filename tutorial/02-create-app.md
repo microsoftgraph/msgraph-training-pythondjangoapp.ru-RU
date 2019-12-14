@@ -3,7 +3,7 @@
 В этом упражнении вы будете использовать [Джанго](https://www.djangoproject.com/) для создания веб-приложения. Если вы еще не установили Джанго, вы можете установить его из интерфейса командной строки (CLI) с помощью следующей команды.
 
 ```Shell
-pip install Django=2.2.5
+pip install Django==3.0
 ```
 
 Откройте подсистему CLI, перейдите к каталогу, в котором у вас есть права на создание файлов, и выполните следующую команду, чтобы создать новое приложение Джанго.
@@ -75,6 +75,7 @@ urlpatterns = [
 Наконец, добавьте временное представление в `tutorials` приложение, чтобы убедиться в работоспособности маршрутизации URL-адресов. Откройте файл `./tutorial/views.py` и добавьте в него указанный ниже код.
 
 ```python
+from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
 def home(request):
@@ -93,9 +94,9 @@ def home(request):
 Выполните следующую команду в командной панели CLI.
 
 ```Shell
-pip install requests_oauthlib==1.2.0
-pip install pyyaml==5.1
-pip install python-dateutil==2.8.0
+pip install requests_oauthlib==1.3.0
+pip install pyyaml==5.2
+pip install python-dateutil==2.8.1
 ```
 
 ## <a name="design-the-app"></a>Проектирование приложения
