@@ -4,129 +4,67 @@
 
 ## <a name="get-calendar-events-from-outlook"></a>Получение событий календаря из Outlook
 
-Для начала добавьте метод `./tutorial/graph_helper.py` для извлечения событий календаря. Добавьте указанный ниже метод.
+1. Для начала добавьте метод в файле **./туториал/graph_helper. корректировки** , чтобы получить события календаря. Добавьте указанный ниже метод.
 
-```python
-def get_calendar_events(token):
-  graph_client = OAuth2Session(token=token)
+    :::code language="python" source="../demo/graph_tutorial/tutorial/graph_helper.py" id="GetCalendarSnippet":::
 
-  # Configure query parameters to
-  # modify the results
-  query_params = {
-    '$select': 'subject,organizer,start,end',
-    '$orderby': 'createdDateTime DESC'
-  }
+    Рассмотрите, что делает этот код.
 
-  # Send GET to /me/events
-  events = graph_client.get('{0}/me/events'.format(graph_url), params=query_params)
-  # Return the JSON result
-  return events.json()
-```
+    - URL-адрес, который будет вызываться — это `/v1.0/me/events`.
+    - `$select` Параметр позволяет ограничить поля, возвращаемые для каждого события, только теми, которые будут реально использоваться представлением.
+    - `$orderby` Параметр сортирует результаты по дате и времени создания, начиная с самого последнего элемента.
 
-Рассмотрите, что делает этот код.
+1. В файле **./туториал/виевс.Пи**измените `from tutorial.graph_helper import get_user` строку на приведенную ниже строку.
 
-- URL-адрес, который будет вызываться — это `/v1.0/me/events`.
-- `$select` Параметр позволяет ограничить поля, возвращаемые для каждого события, только теми, которые будут реально использоваться представлением.
-- `$orderby` Параметр сортирует результаты по дате и времени создания, начиная с самого последнего элемента.
+    ```python
+    from tutorial.graph_helper import get_user, get_calendar_events
+    ```
 
-Теперь создайте представление календаря. В `./tutorial/views.py` `from tutorial.graph_helper import get_user` строке, сначала измените строку на следующий.
+1. Добавьте следующее представление в **./туториал/виевс.Пи**.
 
-```python
-from tutorial.graph_helper import get_user, get_calendar_events
-```
+    ```python
+    def calendar(request):
+      context = initialize_context(request)
 
-Затем добавьте следующее представление в `./tutorial/views.py`.
+      token = get_token(request)
 
-```python
-def calendar(request):
-  context = initialize_context(request)
+      events = get_calendar_events(token)
 
-  token = get_token(request)
+      context['errors'] = [
+        { 'message': 'Events', 'debug': format(events)}
+      ]
 
-  events = get_calendar_events(token)
+      return render(request, 'tutorial/home.html', context)
+    ```
 
-  context['errors'] = [
-    { 'message': 'Events', 'debug': format(events)}
-  ]
+1. Откройте **./туториал/урлс.Пи** и замените существующие `path` операторы `calendar` на приведенные ниже.
 
-  return render(request, 'tutorial/home.html', context)
-```
+    ```python
+    path('calendar', views.calendar, name='calendar'),
+    ```
 
-Обновление `./tutorial/urls.py` для добавления нового представления.
-
-```python
-path('calendar', views.calendar, name='calendar'),
-```
-
-Наконец, обновите **** ссылку на календарь `./tutorial/templates/tutorial/layout.html` , чтобы создать ссылку на это представление. Замените `<a class="nav-link{% if request.resolver_match.view_name == 'calendar' %} active{% endif %}" href="#">Calendar</a>` строку на приведенную ниже строку.
-
-```html
-<a class="nav-link{% if request.resolver_match.view_name == 'calendar' %} active{% endif %}" href="{% url 'calendar' %}">Calendar</a>
-```
-
-Теперь вы можете протестировать это. Войдите и щелкните ссылку **Календарь** на панели навигации. Если все работает, вы должны увидеть дамп событий JSON в календаре пользователя.
+1. Войдите и щелкните ссылку **Календарь** на панели навигации. Если все работает, вы должны увидеть дамп событий JSON в календаре пользователя.
 
 ## <a name="display-the-results"></a>Отображение результатов
 
-Теперь можно добавить шаблон для отображения результатов более удобным для пользователя способом. Создайте новый файл в `./tutorial/templates/tutorial` каталоге `calendar.html` и добавьте указанный ниже код.
+Теперь можно добавить шаблон для отображения результатов более удобным для пользователя способом.
 
-```html
-{% extends "tutorial/layout.html" %}
-{% block content %}
-<h1>Calendar</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Organizer</th>
-      <th scope="col">Subject</th>
-      <th scope="col">Start</th>
-      <th scope="col">End</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% if events %}
-      {% for event in events %}
-        <tr>
-          <td>{{ event.organizer.emailAddress.name }}</td>
-          <td>{{ event.subject }}</td>
-          <td>{{ event.start.dateTime|date:'SHORT_DATETIME_FORMAT' }}</td>
-          <td>{{ event.end.dateTime|date:'SHORT_DATETIME_FORMAT' }}</td>
-        </tr>
-      {% endfor %}
-    {% endif %}
-  </tbody>
-</table>
-{% endblock %}
-```
+1. Создайте новый файл в каталоге **./туториал/темплатес/туториал** `calendar.html` и добавьте указанный ниже код.
 
-Это приведет к перебору коллекции событий и добавлению строки таблицы для каждой из них. Добавьте следующий `import` оператор в начало `./tutorials/views.py` файла.
+    :::code language="html" source="../demo/graph_tutorial/tutorial/templates/tutorial/calendar.html" id="CalendarSnippet":::
 
-```python
-import dateutil.parser
-```
+    Это приведет к перебору коллекции событий и добавлению строки таблицы для каждой из них.
 
-Замените `calendar` представление на `./tutorial/views.py` приведенный ниже код.
+1. Добавьте следующий `import` оператор в начало файла **./туториалс/виевс.Пи** .
 
-```python
-def calendar(request):
-  context = initialize_context(request)
+    ```python
+    import dateutil.parser
+    ```
 
-  token = get_token(request)
+1. Замените `calendar` представление в файле **./туториал/виевс.Пи** на приведенный ниже код.
 
-  events = get_calendar_events(token)
+    :::code language="python" source="../demo/graph_tutorial/tutorial/views.py" id="CalendarViewSnippet":::
 
-  if events:
-    # Convert the ISO 8601 date times to a datetime object
-    # This allows the Django template to format the value nicely
-    for event in events['value']:
-      event['start']['dateTime'] = dateutil.parser.parse(event['start']['dateTime'])
-      event['end']['dateTime'] = dateutil.parser.parse(event['end']['dateTime'])
+1. Обновите страницу, после чего приложение должно отобразить таблицу событий.
 
-    context['events'] = events['value']
-
-  return render(request, 'tutorial/calendar.html', context)
-```
-
-Обновите страницу, после чего приложение должно отобразить таблицу событий.
-
-![Снимок экрана с таблицей событий](./images/add-msgraph-01.png)
+    ![Снимок экрана с таблицей событий](./images/add-msgraph-01.png)
