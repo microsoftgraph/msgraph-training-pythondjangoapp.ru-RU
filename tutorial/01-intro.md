@@ -8,7 +8,7 @@
 > - Скачайте [Краткое руководство по Python](https://developer.microsoft.com/graph/quick-start?platform=option-Python) , чтобы получить рабочий код в минутах.
 > - Скачайте или скопируйте [репозиторий GitHub](https://github.com/microsoftgraph/msgraph-training-pythondjangoapp).
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем приступить к работе с этим руководством, на компьютере для разработки должен быть установлен [Python](https://www.python.org/) (с [PIP](https://pypi.org/project/pip/)). Если у вас нет Python, посетите предыдущую ссылку для получения вариантов загрузки.
 
