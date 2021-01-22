@@ -19,7 +19,7 @@
 
     Этот файл будет использовать все ваши методы проверки подлинности. Создает URL-адрес авторизации, а метод обменивается ответом `get_sign_in_flow` `get_token_from_code` авторизации на маркер доступа.
 
-1. Добавьте следующий `import` инструкции в **верхнюю часть ./tutorial/views.py.**
+1. Добавьте следующий `import` инструкции в **верхнюю часть ./tutorial/views.py**.
 
     ```python
     from tutorial.auth_helper import get_sign_in_flow, get_token_from_code
@@ -94,10 +94,10 @@
 
     :::code language="python" source="../demo/graph_tutorial/tutorial/auth_helper.py" id="SecondCodeSnippet":::
 
-1. `callback`Обновите функцию **в ./tutorial/views.py,** чтобы сохранить пользователя в сеансе и перенаправить обратно на главную страницу. Замените `from tutorial.auth_helper import get_sign_in_url, get_token_from_code` строку на следующую.
+1. `callback`Обновите функцию **в ./tutorial/views.py,** чтобы сохранить пользователя в сеансе и перенаправить обратно на главную страницу. Замените `from tutorial.auth_helper import get_sign_in_flow, get_token_from_code` строку на следующую.
 
     ```python
-    from tutorial.auth_helper import get_sign_in_url, get_token_from_code, store_user, remove_user_and_token, get_token
+    from tutorial.auth_helper import get_sign_in_flow, get_token_from_code, store_user, remove_user_and_token, get_token
     ```
 
 1. Замените `callback` метод на следующий.
@@ -118,7 +118,7 @@
 
 1. Перезапустите сервер и войдите в нее. Вы должны вернуться на home-страницу, но пользовательский интерфейс должен измениться, чтобы указать, что вы вписались.
 
-    ![Снимок экрана с домашней страницей после регистрации](./images/add-aad-auth-01.png)
+    ![Снимок экрана с домашней страницей после входов](./images/add-aad-auth-01.png)
 
 1. Щелкните аватар пользователя в правом верхнем углу, чтобы получить доступ к ссылке **"Выйти".** При **нажатии** кнопки "Выйти" сеанс сбрасывается и возвращается на домашней странице.
 
